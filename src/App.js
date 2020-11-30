@@ -18,13 +18,11 @@ import api from './services/api';
 import CommentScreen from './pages/CommentScreen';
 
 function HomeScreen({navigation}) {
-  const [value, onChangeText] = React.useState('Insira um comentário');
+  const [value, onChangeText] = React.useState('');
 
   async function addMessage() {
     console.log("Entrou")
     const res = await api.post("/Mensagens", {
-      data: `${Date.now()}`,
-      sentimentScore: 0.4,
       texto: value,
     })
     
@@ -48,11 +46,10 @@ function HomeScreen({navigation}) {
               <TextInput
                 style={styles.inputText}
                 onChangeText={(text) => onChangeText(text)}
-                value={value}
-                clearTextOnFocus={"True"}
+                placeholder={"Insira um comentário"}
               />
               <TouchableOpacity onPress={() => addMessage()}>
-                <Text style={styles.buttonPlus} >+</Text>
+                <Text style={styles.buttonPlus}>+</Text>
               </TouchableOpacity>
             </View>
 

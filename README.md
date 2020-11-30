@@ -9,6 +9,14 @@ Repositório do projeto [prodamjuntocomcidadao], Hackathon Prodam 2020/11.
 - [📱 Código-fonte (app)](https://github.com/thidulb/Junto-com-cidadao-App)
 - [🛢 Banco de dados](https://github.com/ermogenes/prodamjuntocomcidadao-mysql)
 
+## Prévia
+
+<p float="left">
+  <img src="assets/screenshot1.jpg" width="33%" />
+  <img src="assets/screenshot2.jpg" width="33%" />
+  <img src="assets/screenshot3.jpg" width="33%" />
+</p>
+
 ## Proposta
 
 Criar um canal de comunicação entre o Cidadão e a Prefeitura do Município de São Paulo.

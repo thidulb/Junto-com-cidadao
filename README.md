@@ -12,9 +12,9 @@ Repositório do projeto [prodamjuntocomcidadao], Hackathon Prodam 2020/11.
 ## Prévia
 
 <p float="left">
-  <img src="assets/screenshot1.jpg" width="33%" />
-  <img src="assets/screenshot2.jpg" width="33%" />
-  <img src="assets/screenshot3.jpg" width="33%" />
+  <img src="assets/screenshot1.jpg" width="30%" />
+  <img src="assets/screenshot2.jpg" width="30%" />
+  <img src="assets/screenshot3.jpg" width="30%" />
 </p>
 
 ## Proposta

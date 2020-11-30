@@ -14,8 +14,22 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import api from './services/api';
+import CommentScreen from './pages/CommentScreen';
+
 function HomeScreen({navigation}) {
   const [value, onChangeText] = React.useState('Insira um comentário');
+
+  async function addMessage() {
+    console.log("Entrou")
+    const res = await api.post("/Mensagens", {
+      data: `${Date.now()}`,
+      sentimentScore: 0.4,
+      texto: value,
+    })
+    
+    console.log(res.data)
+  }
   return (
     <>
       <StatusBar barStyle="light-content" backgroundColor="dodgerblue" />
@@ -35,9 +49,10 @@ function HomeScreen({navigation}) {
                 style={styles.inputText}
                 onChangeText={(text) => onChangeText(text)}
                 value={value}
+                clearTextOnFocus={"True"}
               />
-              <TouchableOpacity>
-                <Text style={styles.buttonPlus}>+</Text>
+              <TouchableOpacity onPress={() => addMessage()}>
+                <Text style={styles.buttonPlus} >+</Text>
               </TouchableOpacity>
             </View>
 
@@ -52,16 +67,14 @@ function HomeScreen({navigation}) {
   );
 }
 
-import CommentScreen from './pages/CommentScreen';
-
 export default function App() {
   const Stack = createStackNavigator();
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Comment" component={CommentScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false, }}/>
+        <Stack.Screen name="Comment" component={CommentScreen} options={{ headerShown: false, }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
